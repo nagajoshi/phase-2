@@ -1,0 +1,329 @@
+#form
+{
+	background: cyan;
+	text-align: center;
+}
+.main
+{
+	background: pink;
+	margin: 2%;
+	padding: 2%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	border-radius: 5%;
+	
+}
+.subdiv1
+{
+	background: lightsalmon;
+	margin: 5%;
+	width:90%;
+	border-radius: 10%;
+      text-align: center;
+
+}
+.subdiv2
+{
+     	background: lightsalmon;
+	margin: 5%;
+	width: 38%;
+	border-radius: 10%;
+      text-align: center;
+      height: 50%;
+      padding: 1%;
+
+}
+input,select
+{
+	width: 90%;
+	padding: 1%;
+	margin: 1%;
+}
+button
+{
+	width: 15%;
+	border-radius: 50%;
+	height: 7vh;
+	background: pink;
+	text-align: center;
+	margin: 10%;
+}
+a{
+	text-decoration: none;
+}
+header
+{
+	background: pink;
+	height: 40%;
+	padding-top: 1%;
+}
+#main
+{
+	text-align: center;
+	background: grey;
+}
+.profile
+{
+  color: red;
+}
+
+.main1
+{
+	background: pink;
+	display: flex;
+	justify-content: space-around;
+	margin: 10%;
+	height
+	
+}
+
+.left
+{
+	background: lightsalmon;
+	border-radius: 5%;
+	margin: 5%;
+	width: 200px;
+	text-align: center;
+	height: 50%;
+	box-shadow: 4px 4px 4px 4px;
+}
+.right
+{
+	background: lightsalmon;
+	border-radius: 5%;
+	margin: 5%;
+	width: 200px;
+	padding: 2%;
+	box-shadow: 4px 4px 4px 4px;
+}
+.main1
+{
+     background: #DAF7A6;
+     display: flex;
+     justify-content: space-around;
+     margin: 10%;
+     border-radius: 5%;
+     width: 900px
+}
+
+.left
+{
+	background: lightsalmon;
+	margin: 5%;
+	width: 250px;
+	height: 400px;
+	text-align: center;
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+
+}
+
+.right
+{
+	background: lightsalmon;
+	margin: 5%;
+	width: 500px;
+	/*height: 600px;*/
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+	padding: 1%;
+
+}
+
+/*mobile view
+@media screen and (min-width: 320px) and (max-width: 480px) {
+.main1
+{
+     background: #DAF7A6;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin: 2%;
+     border-radius: 5%;
+     width: 96%;
+     padding-bottom: 5%;
+}
+.left
+{
+	background: lightsalmon;
+	margin: 2%;
+	width: 370px;
+	height: 400px;
+	text-align: center;
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+       
+}
+
+.right
+{
+	background: lightsalmon;
+	margin: 2%;
+	width: 370px;
+	height: 600px;
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+	padding: 1%;
+	word-wrap: break-word;
+
+}
+}
+
+
+/*tablet view*/
+
+@media screen and (min-width: 481px) and (max-width: 720px) {
+.main1
+{
+     background: #DAF7A6;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin: 2%;
+     border-radius: 5%;
+     width: 800px;
+     padding-bottom: 5%;
+}
+.left
+{
+	background: lightsalmon;
+	margin: 2%;
+	width: 600px;
+	height: 400px;
+	text-align: center;
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+       
+}
+
+.right
+{
+	background: lightsalmon;
+	margin: 2%;
+	width: 800px;
+	height: 600px;
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+	padding: 1%;
+	word-wrap: break-word;
+
+}
+}
+
+
+/*mobile view*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	#form
+{
+	background: cyan;
+	text-align: center;
+	font-size: 50px;
+}
+button
+{
+	width: 25%;
+	border-radius: 50%;
+	height: 10vh;
+	background: pink;
+	text-align: center;
+	margin: 10%;
+}
+
+}
+
+/*tablet view*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	#form
+{
+	background: cyan;
+	text-align: center;
+}
+
+}
+
+/*mobile view*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+.main
+{
+     background: pink;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin: 2%;
+     border-radius: 5%;
+     width: 96%;
+     padding-bottom: 5%;
+}
+.subdiv1
+{
+	background: lightsalmon;
+	margin: 2%;
+	width: 600px;
+	/*height: 400px;*/
+	text-align: center;
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+	font-size: 50px;
+       
+}
+
+.subdiv2
+{
+	background: lightsalmon;
+	margin: 2%;
+	width: 800px;
+	/*height: 600px;*/
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+	padding: 1%;
+	word-wrap: break-word;
+font-size: 50px;
+}
+h1
+{
+	font-size: 15px;
+}
+}
+
+
+/*tablet view*/
+
+@media screen and (min-width: 481px) and (max-width: 720px) {
+.main
+{
+     background: #DAF7A6;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin: 2%;
+     border-radius: 5%;
+     width: 96%;
+     padding-bottom: 5%;
+}
+.subdiv1
+{
+	background: lightsalmon;
+	margin: 2%;
+	width: 600px;
+	/*height: 400px;*/
+	text-align: center;
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+       
+}
+
+.subdiv2
+{
+	background: lightsalmon;
+	margin: 2%;
+	width: 800px;
+	/*height: 600px;*/
+	border-radius: 5%;
+	box-shadow: 4px 4px 4px 4px;
+	padding: 1%;
+	word-wrap: break-word;
+
+}
+}

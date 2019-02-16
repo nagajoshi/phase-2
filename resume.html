@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>resume creator
+	</title>
+  <link rel="stylesheet" type="text/css" href="form.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+         <div class="main1">
+         	<div class="left">
+         		
+         	</div>
+         	<div class="right">
+         		
+         	</div>
+         </div>
+</body>
+</html>
+<script type="text/javascript">
+      var url=window.location.search;
+      var length=url.length;
+      var profile=url.slice(1,length);
+
+var indexDB=window.indexedDB || window.mozIndexDB || window.webkitIndexedDB || window.msIndexedDB;
+       indexedDB ? console.log("success") : console.log("fail");
+        var open;
+        var result;
+        var store;
+       var tx;
+	 var request = indexedDB.open("database",1);
+        request.onupgradeneeded = function(e){
+             open = e.target.result;
+         store = open.createObjectStore("resumedata",{keyPath:"name"});
+        }
+        request.onerror = function(e){
+           console.log("error"+e);
+        }
+        request.onsuccess = function(e){
+              open = e.target.result;
+               tx = open.transaction("resumedata","readwrite");
+               store = tx.objectStore("resumedata");
+               var info=store.get(profile);
+             info.onsuccess=function(data){
+        	console.log(data);
+            	display(data.target.result);
+          }
+        }
+        var left=document.querySelector(".left");
+        var right=document.querySelector(".right");
+        function display(d){
+        var img=document.createElement("img");
+        img.src="./1.png";
+        left.appendChild(img);
+        var h2=document.createElement("h2");
+               h2.textContent=d.name;
+     left.appendChild(h2);
+     var h3=document.createElement("h3");
+     h3.textContent=d.roll;
+     left.appendChild(h3);
+      var h3=document.createElement("h3");
+    h3.textContent=d.email;
+    left.appendChild(h3);
+    var h3=document.createElement("h3");
+   h3.textContent=d.phno;
+    left.appendChild(h3);
+     var h3=document.createElement("h3");
+    h3.textContent=d.place;
+    left.appendChild(h3);
+  
+
+
+     	 var h1=document.createElement("h1");
+      h1.innerHTML="RESUME BUILDING";
+      right.appendChild(h1);
+      var h2=document.createElement("h2");
+       h2.innerHTML="Carrer Objective";
+      right.appendChild(h2);
+       var h2=document.createElement("hr");
+           right.appendChild(h2);
+       var p=document.createElement("p");
+       p.textContent=d.car;
+      right.appendChild(p);
+
+      var h2=document.createElement("h2");
+      h2.innerHTML="Education Details";
+      right.appendChild(h2);
+      var h2=document.createElement("hr");
+           right.appendChild(h2);
+       
+      //    var table=document.createElement("table");
+      //    table.border="1";
+      //    var tr1="<tr><td>sno</td><td>degree</td><td>institute</td><td>percentege</td><td>year</td></tr>";
+      //   var tr2="";
+      // //   for(i=0;i<d.length;i++)
+      //   {
+      //     tr2=tr2+"<tr><td>"+d[i].degree+"</td><td>"+d[i].institute+"</td><td>"+d[i].percentage+"</td><td>"+d[i].year+"</td></tr>";
+      //   }
+      //   table.innerHTML=tr1+tr2;
+      //    right.appendChild(table);
+      // //  }
+      //  function languages(e){
+      //    var h2=document.createElement("h2");
+      //    h2.innerHTML="Languages";
+      //    right.appendChild(h2);
+      //    var h2=document.createElement("hr");
+      //      right.appendChild(h2);
+       
+      //  var ul=document.createElement("ul");
+       
+      // for(i=0;i<e.length;i++)
+      // {
+      //   var li=document.createElement("li");
+      //   li.textContent=e[i].lang;
+      //   ul.append(li);
+      // } 
+      // right.append(ul);
+
+
+      for(var i in d.education){
+      	var h4=document.createElement("h4");
+      	h4.textContent=d.education[i].degree;
+      	right.append(h4);
+      	var ul=document.createElement("ul");
+
+
+
+      	var instli=document.createElement("li");
+      	instli.textContent=d.education[i].institute;
+      	ul.appendChild(instli);
+      	
+
+      	var perli=document.createElement("li");
+      	perli.textContent=d.education[i].percentage;
+      	ul.append(perli);
+
+      	var year=document.createElement("li");
+      	year.textContent=d.education[i].year;
+      	ul.appendChild(year);
+        h4.appendChild(ul);
+      	
+      	
+
+       }
+}
+     
+        
+        
+</script>

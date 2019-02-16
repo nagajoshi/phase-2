@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form 1</title>
+	<link rel="stylesheet" type="text/css" href="form.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body id="form">
+	<h1>Resume Building</h1>
+	<div class="main">
+		
+		<div class="subdiv1">
+	<h1>Carrier Objective</h1>
+	<select name="career" id="career">
+		<option>select your carreer objective</option>
+		<option>i want to seek a job in acom pany where i can explore my skills</option>
+		<option>i want to attain a job in company where i can utilize my knowledge</option>
+	</select>
+</div>
+<div class="subdiv2">
+	<h1>Personal Information</h1>
+	<input type="text" name="name" id="name" placeholder="enter your name"><br>
+	<input type="number" name="roll" id="roll"placeholder="enter your roll number"><br>
+    <input type="email" name="email" id="email" placeholder="enter your email"><br>
+    <input type="nunmber" name="phno" id="phno" placeholder="enter your ph.no"><br>
+    <input type="text" name="place" id="place" placeholder="enter your place">
+</div>
+<div class="subdiv2">
+	<h1>PG Details</h1>
+	<select name="pgdegree" id="pgdegree">
+		<option>please select your degree</option>
+		<option>MBA</option>
+		<option>MCA</option>
+		<option>B.Tech</option>
+		<option>M.Tech</option>
+	</select><br>
+	<input type="text" name="pginstitute" id="pginstitute" placeholder="enter your institute name"><br>
+	<input type="number" name="pgpercentage" id="pgpercentage" placeholder="enter your percentage"><br>
+	<input type="number" name="pgyear" id="pgyear" placeholder="enter your yop">
+</div>
+<div class="subdiv2">
+		<h1>Graduation Details</h1>
+	<select name="graduationdegree" id="graduationdegree">
+		<option>please select your degree</option>
+		<option> degree</option>
+	
+		<option>B.Tech</option>
+	</select><br>
+	<input type="text" name="graduationinstitute" id="graduationinstitute" placeholder="enter your institute name"><br>
+	<input type="number" name="graduationpercentage" id="graduationpercentage" placeholder="enter your percentage"><br>
+	<input type="number" name="graduationyear" id="graduationyear" placeholder="enter your yop"><br>
+
+</div>
+<div class="subdiv2">
+			
+
+			<h1>Inter Details</h1>
+	<select name="interdegree" id="interdegree">
+		<option>M.pc</option>
+		<option>Bi.pc</option>
+	
+		<option>CEC</option>
+	</select><br>
+	<input type="text" name="interinstitute" id="interinstitute" placeholder="enter your institute name"><br>
+	<input type="number" name="interpercentage" id="interpercentage" placeholder="enter your percentage"><br>
+	<input type="number" name="interyear" id="interyear" placeholder="enter your yop"><br>
+
+</div>
+<div class="subdiv2">
+			<h1>SSC Details</h1>
+	<select name="sccdegree" id="sscdegree">
+		<option>Board</option>
+		<option> CBSE</option>
+	<option>ICSE</option>
+		
+	</select><br>
+	<input type="text" name="sscinstitute" id="sscinstitute" placeholder="enter your institute name"><br>
+	<input type="number" name="sscpercentage" id="sscpercentage" placeholder="enter your percentage"><br>
+	<input type="number" name="sscyear" id="sscyear" placeholder="enter your yop"><br>
+
+</div>
+
+
+</div>
+<button type="button" name="submit" id="submit" onclick="submit()">Submit</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	function submit(){
+		var career=document.getElementById("career").value;
+		var name=document.getElementById("name").value;
+		var roll=document.getElementById("roll").value;
+		var email=document.getElementById("email").value;
+		var phno=document.getElementById("phno").value;
+		var place=document.getElementById("place").value;
+		
+		
+		var pgdegree=document.getElementById("pgdegree").value;
+		var pginstitute=document.getElementById("pginstitute").value;
+		var pgpercentage=document.getElementById("pgpercentage").value;
+		var pgyear=document.getElementById("pgyear").value;
+
+
+		var graduationdegree=document.getElementById("graduationdegree").value;
+		var graduationinstitute=document.getElementById("graduationinstitute").value;
+		var graduationpercentage=document.getElementById("graduationpercentage").value;
+		var graduationyear=document.getElementById("graduationyear").value;
+
+				var interdegree=document.getElementById("interdegree").value;
+		var interinstitute=document.getElementById("interinstitute").value;
+		var interpercentage=document.getElementById("interpercentage").value;
+		var interyear=document.getElementById("interyear").value;
+
+
+		var sscdegree=document.getElementById("sscdegree").value;
+		var sscpercentage=document.getElementById("sscpercentage").value;
+		var sscinstitute=document.getElementById("sscinstitute").value;
+		var sscyear=document.getElementById("sscyear").value;
+       
+       var indexDB=window.indexedDB || window.mozIndexDB || window.webkitIndexedDB || window.msIndexedDB;
+       indexedDB ? console.log("success") : console.log("fail");
+
+        var open;
+        var result;
+        var store;
+       var request = indexedDB.open("database",1);
+        request.onupgradeneeded = function(e){
+             open = e.target.result;
+         store = open.createObjectStore("resumedata",{keyPath:"name"});
+        }
+        request.onerror = function(e){
+           console.log("error"+e);
+        }
+        request.onsuccess = function(e){
+              open = e.target.result;
+               tx = open.transaction("resumedata","readwrite");
+               store = tx.objectStore("resumedata");
+              store.put({
+                car:career,
+                name:name,
+                roll:roll,
+                email:email,
+                phno:phno,
+                place:place,
+education:[{
+                degree:pgdegree,
+                 institute:pginstitute,
+                 percentage:pgpercentage,
+                 year:pgyear
+             },
+             {
+                 degree:graduationdegree,
+                 institute:graduationinstitute,
+                 percentage:graduationpercentage,
+                 year:graduationyear
+              },
+
+              {
+                 degree:interdegree,
+                 institute:interinstitute,
+                 percentage:interpercentage,
+                 year:interyear
+             },
+             {
+                 degree:sscdegree,
+                institute:sscinstitute,
+                 percentage:sscpercentage,
+                 year:sscyear
+             }
+             ]
+                           });
+        }
+        window.open("index.html","_self");
+	}
+</script>
